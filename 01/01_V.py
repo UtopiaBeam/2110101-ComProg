@@ -1,9 +1,9 @@
-# 01_V1 (simple)
+# 01_V1
 answers = [ 'e', 'b', 'e', 'b', 'b' ]
 n = int(input())
 print(answers[n-1].lower())
 
-# 01_V1 (Advance)
+# 01_V1 (Adv)
 print('ebebb'[int(input())-1])
 
 # 01_V2

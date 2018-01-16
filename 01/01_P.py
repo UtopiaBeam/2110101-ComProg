@@ -15,17 +15,17 @@ print(3.14159 * r * r)
 # or
 print(3.14159 * float(input()) ** 2)
 
-# 01_P3 (Advance)
+# 01_P3 (Adv)
 ans = 0
-for i in range (5) :
+for i in range(5) :
     t = float(input())
     ans += t
 print(ans / 5)
 
-# 01_P4 (Advance)
+# 01_P4 (Adv)
 x = float(input())
 sum = 1 + x
-for i in range (2, 5) :
+for i in range(2, 5) :
     p = 1;  q = 1
     for j in range (1, i+1) :
         p *= x;     q *= j
@@ -69,7 +69,7 @@ p = (a + b + c) / 2
 ans = (p * (p-a) * (p-b) * (p-c)) ** 0.5
 print(ans)
 
-# 01_P10 (Advance)
+# 01_P10 (Adv)
 n = input()
 x = int(n)
 sum = 0

@@ -1,8 +1,8 @@
-# 01_L1 (Simple)
+# 01_L1
 answers = [ 'b', 'e', 'e', 'b', 'd' ]
 n = int(input())
 print(answers[n-1].lower())
-# 01_L1 (Advance)
+# 01_L1 (Adv)
 print('beebd'[int(input())-1])
 
 # 01_L2
@@ -30,10 +30,10 @@ dt -= dm*60
 ds = dt
 print(str(dh) + ":" + str(dm) + ":" + str(ds))
 
-# 01_L4 (Simple)
+# 01_L4
 
 
-# 01_L4 (Advance)
+# 01_L4 (Adv)
 n = int(input())
 sum = 0
 for i in range (2, 14) :
