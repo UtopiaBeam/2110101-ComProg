@@ -1,13 +1,13 @@
-# 02_V1 (Simple)
+# 02_V1
 answers = [ 'a', 'e', 'e', 'b', 'c' ]
 n = int(input())
 print(answers[n-1].lower())
 
-# 02_V1 (Advance)
+# 02_V1 (Adv)
 print('aeebc'[int(input())-1])
 
 
-# 02_V2 (Simple)
+# 02_V2
 a = int(input())
 b = int(input())
 c = int(input())
@@ -27,10 +27,10 @@ if a > b :
 print(a, b, c, d)
 
 
-# 02_V2 (Advance)
+# 02_V2 (Adv: sorted() + list comprehension)
 print(*sorted([int(input()) for _ in range(4)]))
 
-# 02_V3 (Simple)
+# 02_V3
 d = float(input())
 max = d
 min = d
@@ -61,7 +61,7 @@ if d < min :
     min = d
 print(min, max)
 
-# 02_V3 (Advance: using loop)
+# 02_V3 (Adv: loop)
 mn = float('inf')
 mx = float('-inf')
 for i in range(0, 6) :
@@ -70,11 +70,11 @@ for i in range(0, 6) :
     mx = max(mx, x)
 print(mn, mx)
 
-# 02_V3 (Advance: using list + min & max functions)
+# 02_V3 (Adv: list comprehension + min & max functions)
 ls = [float(input()) for _ in range(6)]
 print(min(ls), max(ls))
 
-# 02_V4 (Advance)
+# 02_V4 (Adv: list + loop)
 day = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 d = int(input())
 m = int(input())

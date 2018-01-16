@@ -1,10 +1,10 @@
 # 02_L1
 print('edcbe'[int(input()) - 1].lower())
 
-# 02_L2 (Advance)
+# 02_L2 (Adv: sorted() + list comprehension)
 print(sorted([int(input()) for _ in range(5)])[2])
 
-# 02_L3 (Simple)
+# 02_L3
 n = int(input())
 if n < 0 or n > 80 :
     print("Error : Out of range")
@@ -20,7 +20,7 @@ else:
     n //= 3
     print(out) 
 
-# 02_L3 (Advance)
+# 02_L3 (Adv: loop)
 n = int(input())
 if n < 0 or n > 80 :
     print("Error : Out of range")
@@ -31,7 +31,7 @@ else :
         n //= 3
     print(ans)
 
-# 02_L4 (Advance: using function)
+# 02_L4 (Adv: function)
 from math import ceil
 def e(nm) :
     w = [20, 100, 250, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000]
