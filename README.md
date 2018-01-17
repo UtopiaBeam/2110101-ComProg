@@ -1,6 +1,6 @@
 # Notice
 Sample solutions for CU 2110101 Comp Prog course.
-You may ask [me](https://www.facebook.com/natchapolsrisang) any questions you have.
+You may ask [me](https://www.facebook.com/natchapolsrisang) any questions you have or report bugs if any.
 
 Some problems may have an alternative way(s) to implement. The ones which exceed normal courses will be labeled as (Adv: _topic(s) that is used_)
 
