@@ -32,7 +32,7 @@ elif 0 <= x < 50 :
 else :
     print('ERROR')
 
-# 02_P2 (Adv: list + next() + inline if-else)
+# 02_P2 (Adv: list + next() + inline if-else + generator)
 score = [0, 50, 55, 60, 65, 70, 75, 80, 100]
 grade = ['ERROR', 'F', 'D', 'D+', 'C', 'C+', 'B', 'B+', 'A']
 x = float(input())
