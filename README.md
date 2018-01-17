@@ -8,4 +8,5 @@ Some problems may have an alternative way(s) to implement. The ones which exceed
 
 # Resource
 **Built-in functions:** https://docs.python.org/3/library/functions.html (Dump doc IMO)
+
 **Stackoverflow:** https://stackoverflow.com/ (As useful as always)
