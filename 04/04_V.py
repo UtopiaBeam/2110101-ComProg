@@ -21,7 +21,7 @@ for c in st :
 ls = str.split()
 print('Found' if wd in ls else 'Not Found')
 
-# 04_V4
+# 04_V4 (Adv: list)
 str = input()
 num = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
 for i in range(int(len(str))) :
