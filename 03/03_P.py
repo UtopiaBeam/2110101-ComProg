@@ -101,3 +101,29 @@ else :
 n = int(input())
 ls = [x for x in range(n-1, 1, -1) if n % x == 0]
 print(*ls if len(ls) > 0 else 'Prime Number')
+
+# 03_P11
+n = int(input())
+p = [2]
+if n < 0 :
+    print('input unavailable')
+elif n < 2 :
+    print('none')
+else :
+    for i in range(3, n+1, 2) :
+        for j in range(2, i) :
+            if i % j == 0 :
+                break
+            if j == i-1 :
+               p.append(i)
+    print(*p)
+
+# 03_P11 (Adv: set comprehension + Sieve of Eratosthenes)
+from math import sqrt, ceil
+n = int(input())
+np = {j for i in range(2, int(ceil(sqrt(n)))) for j in range(2*i, n+1, i)}
+p = [x for x in range(2, n+1) if x not in np]
+if n < 0 :
+    print('input unavailable')
+else :
+    print(*p if len(p) > 0 else 'none')
