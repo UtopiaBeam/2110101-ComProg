@@ -143,7 +143,56 @@ for i in range(1, r+1) :
         print(i*j, end = ' ')
     print()
 
-# 03_P13 (Adv: list comprehension)
+# 03_P13 (Adv: generator comprehension)
 r, c = [int(x) for x in input().split()]
 for i in range(1, r+1) :
-    print(*[x*i for x in range(1, c+1)])
+    print(*(x*i for x in range(1, c+1)))
+
+# 03_P14 (Adv: map() + format())
+n, op = map(int, input().split())
+if op == 1 :
+    for i in range(1, n+1) :
+        for j in range(i, n+1) :
+            print('({},{})'.format(i, j))
+if op == 2 :
+    for i in range(1, n+1) :
+        for j in range(1, i+1) :
+            print('({},{})'.format(i, j))
+if op == 3 :
+    for i in range(1, n+1) :
+        print('({},{})'.format(i, n+1-i))
+
+# 03_P14 (Adv: map() + lambda function + format() + escape character)
+n, op = map(int, input().split())
+f = [lambda i, j : i >= j, 
+     lambda i, j : i <= j,
+     lambda i, j : i + j == n + 1][op-1]
+print(*('({},{})'.format(i, j)
+    for i in range(1, n+1)
+    for j in range(1, n+1)
+    if f(i, j)), sep = '\n')
+
+# 03_P15 (Adv: generator comprehension)
+n = int(input())
+# Top two triangles
+for i in range(1, n//2 + 1) :
+    for j in range(1, n+1) :
+        print('#' if i+j >= n//2 + 1 and j-i <= (n+1)//2 else '.', sep = '', end = '')
+    print('.', end = '')
+    for j in range(1, n+1) :
+        print('#' if i+j >= n//2 + 1 and j-i <= (n+1)//2 else '.', sep = '', end = '')
+    print()
+# Full row
+for i in range(n//2 - 2) :
+    print(*('#' for _ in range(2*n + 1)), sep = '')
+# Bottom triangle
+for i in range(1, n+2) :
+    for j in range(1, 2*n + 2) :
+        print('#' if i <= j and i+j <= 2*n+2 else '.', end = '')
+    print()
+
+# 03_P16
+x = int(input())
+y = int(input())
+for i in range(1, y+1) :
+    print('{} {} {}'.format(x, i, x*i))
