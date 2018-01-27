@@ -127,3 +127,23 @@ if n < 0 :
     print('input unavailable')
 else :
     print(*p if len(p) > 0 else 'none')
+
+# 03_P12 (Adv: set comprehension + Sieve of Eratosthenes) 
+from math import sqrt, ceil
+n = int(input())
+np = {j for i in range(2, int(ceil(sqrt(n)))) for j in range(2*i, n+1, i)}
+p = [x for x in range(2, n+1) if x not in np]
+ans = [x for x in p if n % x == 0]
+print(*ans)
+
+# 03_P13
+r, c = [int(x) for x in input().split()]
+for i in range(1, r+1) :
+    for j in range(1, c+1) :
+        print(i*j, end = ' ')
+    print()
+
+# 03_P13 (Adv: list comprehension)
+r, c = [int(x) for x in input().split()]
+for i in range(1, r+1) :
+    print(*[x*i for x in range(1, c+1)])
