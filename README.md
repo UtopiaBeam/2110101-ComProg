@@ -6,7 +6,5 @@ Some problems may have an alternative way(s) to implement. The ones which exceed
 
 ### Please do not copy the codes. You should take these as the examples and write your own codes.
 
-# Resource
-**Built-in functions:** https://docs.python.org/3/library/functions.html (Dump doc IMO)
-
-**Stackoverflow:** https://stackoverflow.com/ (As useful as always)
+# Contents
+TBA really soon...maybe?
