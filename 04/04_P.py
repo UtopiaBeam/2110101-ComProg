@@ -59,3 +59,16 @@ else :      print('No missing digits')
 st = set('0123456789') - set(input().strip())
 if st :     print(*sorted(st))
 else :      print('No missing digits')
+
+# 04_P8
+a = input().lower()
+chk = True
+for i in range(1, len(a)) :
+    if ord(a[i-1]) > ord(a[i]) :
+        chk = False
+        break
+print('yes' if chk else 'no')
+
+# 04_P8 (Adv: list + sorted())
+a = list(input().lower())
+print('yes' if a == sorted(a) else 'no')
