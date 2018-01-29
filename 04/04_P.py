@@ -72,3 +72,81 @@ print('yes' if chk else 'no')
 # 04_P8 (Adv: list + sorted())
 a = list(input().lower())
 print('yes' if a == sorted(a) else 'no')
+
+# 04_P9
+str, a, b = (input().strip() for _ in range(3))
+ans = ''
+for c in str :
+    if c == a :     ans += b
+    elif c == b :   ans += a
+    else :          ans += c
+print(ans)
+
+# 04_P9 (Adv: dict)
+str, a, b = (input().strip() for _ in range(3))
+print(*( {a : b, b : a}[c] if c in [a, b] else c for c in str ), sep = '')
+
+# 04_P10
+str, a, b = (input().strip() for _ in range(3))
+ans = ''
+for c in str :
+    chk = True
+    for i in range(len(a)) :
+        if c == a[i] :      ans += b[i];    chk = False
+        elif c == b[i] :    ans += a[i];    chk = False
+    if chk :    ans += c
+print(ans)
+
+# 04_P10 (Adv: dict + zip())
+str, a, b = (input().strip() for _ in range(3))
+dc = dict([*zip(a, b), *zip(b, a)])
+print(*(dc[c] if c in dc else c for c in str), sep = '')
+
+# 04_P11
+s = input().strip()
+l, r = (int(x) for x in input().strip().split())
+print(s[:l] + s[l:r+1][::-1] + s[r+1:])
+
+# 04_P12
+s = input().strip().lower().replace(' ', '')
+print('yes' if s == s[::-1] else 'no')
+
+# 04_P13
+s = input().strip() + ' '
+cnt = 0
+for i in range(len(s)-1) :
+    if s[i] in 'aeiou' and s[i+1] not in 'aeiou' :
+        cnt += 1
+print(cnt)
+
+# 04_P13 (Adv: enumerate() + sum() + zip())
+s = input().strip().lower()
+idx = [i for i in range(len(s)) if s[i] in 'aeiou']
+print(sum(1 for i, j in zip(idx, idx[1:]) if i+1 != j) + 1 if idx else 0)
+
+# 04_P14
+s = input().strip() + '+'
+if s[0] not in '+-' :
+    s = '+' + s
+ans, num, op = 0, 0, 1
+for x in s :
+    if x in '+-' :
+        ans += op * num
+        num = 0
+        if x == '+' :   op = 1
+        else :          op = -1
+    else :
+        num = 10*num + ord(x) - ord('0')
+print(ans)
+
+# 04_P14 (Adv: eval())
+print(eval(input().strip()))
+
+# 04_P15 (Adv: defaultDict)
+from collections import defaultdict as dict
+dc = dict(int)
+ls = []
+for c in input().strip() :
+    dc[c] += 1
+    ls.append((c, dc[c]))
+print(*(c for c, x in ls if dc[c] == 1 or x == 2), sep = '')
