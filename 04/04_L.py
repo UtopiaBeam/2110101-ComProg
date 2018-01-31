@@ -1,5 +1,5 @@
-# 04_L1 (Bug?)
-print('ddbca'[int(input())-1])
+# 04_L1
+print('ddedd'[int(input())-1])
 
 # 04_L2
 s = input().lower()
