@@ -26,6 +26,7 @@ Here is an example:
 def double(x) :
 	return 2*x
 double(5)	# 10
+```
 
 ## sorted()
 Return sorted list from the given iterable.
