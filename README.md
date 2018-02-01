@@ -7,7 +7,7 @@ Some problems may have alternative ways to implement. The ones which exceed norm
 ### Please do not copy the codes. You should take these as the examples and write your own codes.
 
 # Common used topics
-- `math` functions i.e. `sqrt()`, `ceil()`, `floor()`, `pow()`\
+- `math` functions i.e. `sqrt()`, `ceil()`, `floor()`, `pow()`
 - `format()`: set the format of strings.
 - `zip()`: zip lists to tuples.
 - `map()`: map a list to another with a function.
@@ -16,4 +16,5 @@ Some problems may have alternative ways to implement. The ones which exceed norm
 - Inline if/else & for-loop
 - Function & Lambda functions
 - Iterator & Generator
+
 _(Further explanation and sources will be added later.)_
