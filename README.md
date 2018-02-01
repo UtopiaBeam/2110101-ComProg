@@ -7,6 +7,26 @@ Some problems may have alternative ways to implement. The ones which exceed norm
 ### Please do not copy the codes. You should take these as the examples and write your own codes.
 
 # Common used topics
+There are some topics that used frequently as following:
+
+## Functions & Lambda expression
+Function is a block of reusable codes, which provides an easier way to implement reputative commands.
+
+The implementation is:
+```python
+def function_name( [paramaters] ) :
+	command_1
+	command_2
+	.
+	.
+	.
+```
+Here is an example:
+```python
+def double(x) :
+	return 2*x
+double(5)	# 10
+
 ## sorted()
 Return sorted list from the given iterable.
 The syntax is:
