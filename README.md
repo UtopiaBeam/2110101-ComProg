@@ -9,7 +9,7 @@ Some problems may have alternative ways to implement. The ones which exceed norm
 # Common used topics
 There are some topics that used frequently as following:
 
-## Functions & Lambda expression
+## Function
 Function is a block of reusable codes, which provides an easier way to implement reputative commands.
 
 The implementation is:
@@ -26,6 +26,22 @@ Here is an example:
 def double(x) :
 	return 2*x
 double(5)	# 10
+```
+
+## Lambda Function
+Lambda Function is an anonymous function, which is usually needed when it has been created. It is usually used with other functions i.e. `map()`, `filter()`
+The implementation is:
+```python
+lambda [parameters] : expression
+```
+Here is an example:
+```
+sum = lambda x, y : x + y
+```
+which is equivalent to:
+```python
+def sum(x, y) :
+	return x + y
 ```
 
 ## sorted()
@@ -47,11 +63,7 @@ sorted([3, 2, 4, 1], reverse = True)			# [4, 3, 2, 1]
 _Source: https://www.programiz.com/python-programming/methods/built-in/sorted_
 
 # TBA
-- `math` functions i.e. `sqrt()`, `ceil()`, `floor()`, `pow()`
-- `format()`: set the format of strings.
 - `zip()`: zip lists to tuples.
 - `map()`: map a list to another with a function.
-- `sum()`: sum all elements in the list.
 - Inline if/else & for-loop
-- Function & Lambda functions
 - Iterator & Generator
