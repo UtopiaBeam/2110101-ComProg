@@ -9,6 +9,70 @@ Some problems may have alternative ways to implement. The ones which exceed norm
 # Common used topics
 There are some topics that used frequently as following:
 
+## Inline if-else
+Basically if-else with alternative short implementation, as followed:
+```python
+_something_when_true_ if _condition_ else _something_when_false_
+```
+which is equivalent to:
+```python
+if _condition_ :
+	_something_when_true_ 
+else :
+	_something_when_false_
+```
+Here is an example:
+```python
+print('More than' if 1 > 2 else 'Less than')
+```
+#### Note that inline if-else must have `else` in the statement. Otherwise the syntax will be wrong.
+
+## Inline for-loop & List comprehension
+Basically for-loop with alternative short implementation, which is usually used with list, set, generator comprehension.
+
+List comprehension is a way to express a list using short syntax, which usually combined with inline for-loop
+
+The syntax of inline for-loop is:
+```python
+_command_ for _variable_ in _iterable_
+```
+which is equivalent to:
+```python
+for _variable_ in _iterable_ :
+	_command_
+```
+
+The list comprehension syntax is:
+```python
+ls = [_expression_ for _var_ in _iterable_]
+```
+which is equivalent to:
+```python
+ls = []
+for _var_ in _iterable_ :
+	ls.append(_expression_)
+```
+Here is an example:
+```python
+ls = [x for x in range(5)]	# [0, 1, 2, 3, 4]
+```
+
+Inline if-else can also be used in for-loop as followed:
+```python
+_something_when_true_ if _condition_ else _something_when_false_ for _variable_ in _iterable_
+# Again, else is needed.
+```
+or
+```python
+_command_ for _variable_ in _iterable_ if _condition_
+```
+
+Here are some examples:
+```python
+ls = [x for x in range(5) if x % 2 == 0]			# [0, 2, 4]
+ls = [x if x % 2 == 0 else -x for x in range(5)]		# [0, -1, 2, -3, 4]
+```
+
 ## Function
 Function is a block of reusable codes, which provides an easier way to implement reputative commands.
 
@@ -35,7 +99,7 @@ The implementation is:
 lambda [parameters] : expression
 ```
 Here is an example:
-```
+```python
 sum = lambda x, y : x + y
 ```
 which is equivalent to:
@@ -60,10 +124,8 @@ sorted(['a', 'B', 'C'])					# ['B', 'C', 'a']
 sorted(['a', 'B', 'C'], key = str.swapcase)		# ['a', 'B', 'C']
 sorted([3, 2, 4, 1], reverse = True)			# [4, 3, 2, 1]
 ```
-_Source: https://www.programiz.com/python-programming/methods/built-in/sorted_
 
 # TBA
 - `zip()`: zip lists to tuples.
 - `map()`: map a list to another with a function.
-- Inline if/else & for-loop
 - Iterator & Generator
