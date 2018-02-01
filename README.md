@@ -23,6 +23,7 @@ sorted(['a', 'B', 'C'])					# ['B', 'C', 'a']
 sorted(['a', 'B', 'C'], key = str.swapcase)		# ['a', 'B', 'C']
 sorted([3, 2, 4, 1], reverse = True)			# [4, 3, 2, 1]
 ```
+_Source: https://www.programiz.com/python-programming/methods/built-in/sorted_
 
 # TBA
 - `math` functions i.e. `sqrt()`, `ceil()`, `floor()`, `pow()`
