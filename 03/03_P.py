@@ -172,24 +172,14 @@ print(*('({},{})'.format(i, j)
     for j in range(1, n+1)
     if f(i, j)), sep = '\n')
 
-# 03_P15 (Adv: generator comprehension)
+# 03_P15
 n = int(input())
-# Top two triangles
-for i in range(1, n//2 + 1) :
-    for j in range(1, n+1) :
-        print('#' if i+j >= n//2 + 1 and j-i <= (n+1)//2 else '.', sep = '', end = '')
-    print('.', end = '')
-    for j in range(1, n+1) :
-        print('#' if i+j >= n//2 + 1 and j-i <= (n+1)//2 else '.', sep = '', end = '')
-    print()
-# Full row
-for i in range(n//2 - 2) :
-    print(*('#' for _ in range(2*n + 1)), sep = '')
-# Bottom triangle
-for i in range(1, n+2) :
-    for j in range(1, 2*n + 2) :
-        print('#' if i <= j and i+j <= 2*n+2 else '.', end = '')
-    print()
+for i in range(n//2 - 1, -1, -1) :
+    print('.'*i + '#'*(n-2*i) + '.'*(2*i+1) + '#'*(n-2*i) + '.'*i)
+for _ in range(n//2 - 2) :
+    print('#'*(2*n+1))
+for i in range(n + 1) :
+    print('.'*i + '#'*(2*n+1-2*i) + '.'*i)
 
 # 03_P16
 x = int(input())
