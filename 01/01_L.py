@@ -30,9 +30,6 @@ dt -= dm*60
 ds = dt
 print(str(dh) + ":" + str(dm) + ":" + str(ds))
 
-# 01_L4
-
-
 # 01_L4 (Adv)
 n = int(input())
 sum = 0
