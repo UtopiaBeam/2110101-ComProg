@@ -30,12 +30,12 @@ a, b = input().split()
 sum = 0
 for x in b :
     if x.isdigit() :
-        sum += ord(x) - ord('0')
+        sum += int(x)
 print(a[0].upper() + a[1:].lower(), sum)
 
 # 04_P3 (Adv: title() + sum())
 a, b = input().split()
-print(a.title(), sum(ord(x) - ord('0') for x in b if x.isdigit()))
+print(a.title(), sum(int(x) for x in b if x.isdigit()))
 
 # 04_P4 (Adv: map())
 m, d, y = map(int, input().strip().split('/'))
@@ -136,7 +136,7 @@ for x in s :
         if x == '+' :   op = 1
         else :          op = -1
     else :
-        num = 10*num + ord(x) - ord('0')
+        num = 10*num + int(x)
 print(ans)
 
 # 04_P14 (Adv: eval())
