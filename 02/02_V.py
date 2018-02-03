@@ -6,7 +6,6 @@ print(answers[n-1].lower())
 # 02_V1 (Adv)
 print('aeebc'[int(input())-1])
 
-
 # 02_V2
 a = int(input())
 b = int(input())
@@ -25,7 +24,6 @@ if b > c :
 if a > b :
     a, b = b, a
 print(a, b, c, d)
-
 
 # 02_V2 (Adv: sorted() + list comprehension)
 print(*sorted([int(input()) for _ in range(4)]))
@@ -85,4 +83,3 @@ for i in range(m-1) :
 if m > 1 and (y % 400 == 0 or (y % 4 == 0 and y % 100 > 0)) :
     d += 1
 print(d)
-
