@@ -12,11 +12,11 @@ while x > 0 :
 print(ans)
 
 # 03_L2 (Adv: list)
-x = input()[::-1]
+x = input()
 ans = 0
 while len(x) > 0 :
-    ans = 2 * ans + int(x[-1])
-    x = x[:-1]
+    ans = 2 * ans + int(x[0])
+    x = x[1:]
 print(ans)
 
 # 03_L3
