@@ -22,32 +22,13 @@ for x in range(n) :
 if chk :
     print('No solution')
 
-
 # 03_V4
-from math import pow
+from math import pow, factorial
 x = float(input())
 ans = 0
 k = 0
 while True :
-    fact = 1
-    for i in range(1, 2*k+1) :
-        fact *= i
-    tmp = (pow(-1, k) * pow(x, 2*k)) / fact
-    if abs(tmp) < 1e-8 :
-        break
-    ans += tmp
-    k += 1
-print(ans, k-1)
-
-# 03_V4 (Adv: recursive function)
-from math import pow
-x = float(input())
-ans = 0
-k = 0
-def fact(n) :
-    return 1 if n < 2 else n * fact(n-1)
-while True :
-    tmp = (pow(-1, k) * pow(x, 2*k)) / fact(2*k)
+    tmp = (pow(-1, k) * pow(x, 2*k)) / factorial(2*k)
     if abs(tmp) < 1e-8 :
         break
     ans += tmp
