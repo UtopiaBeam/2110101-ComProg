@@ -5,10 +5,9 @@ for i in range(1, n+1) :
     ans *= i
 print(ans)
 
-# 03_P1 (Adv: recursive function)
-def f(n) :
-    return 1 if n < 2 else n * f(n-1)
-print(f(int(input())))
+# 03_P1 (factorial())
+from math import factorial
+print(factorial(int(input())))
 
 # 03_P2 (Adv: recursive function)
 def f(n) :
@@ -148,19 +147,13 @@ r, c = [int(x) for x in input().split()]
 for i in range(1, r+1) :
     print(*(x*i for x in range(1, c+1)))
 
-# 03_P14 (Adv: map() + format())
-n, op = map(int, input().split())
-if op == 1 :
-    for i in range(1, n+1) :
-        for j in range(i, n+1) :
-            print('({},{})'.format(i, j))
-if op == 2 :
-    for i in range(1, n+1) :
-        for j in range(1, i+1) :
-            print('({},{})'.format(i, j))
-if op == 3 :
-    for i in range(1, n+1) :
-        print('({},{})'.format(i, n+1-i))
+# 03_P14
+n, op = (int(e) for e in input().split())
+for i in range(1, n+1) :
+    for j in range(1, n+1) :
+        if op == 1 and i <= j :     print('({},{})'.format(i, j))
+        if op == 2 and i >= j :     print('({},{})'.format(i, j))
+        if op == 3 and i+j == n+1 : print('({},{})'.format(i, j))
 
 # 03_P14 (Adv: map() + lambda function + format() + escape character)
 n, op = map(int, input().split())
