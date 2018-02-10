@@ -1,4 +1,4 @@
-# 59_2_Q1_2_p (Adv: list)
+# 59_2_Q1_2_p
 d, m, y = (int(x) for x in input().split())
 d, y = d+15, y-543
 if m == 2 :     n = 29 if y % 400 == 0 or (y % 4 == 0 and y % 100 != 0) else 28
