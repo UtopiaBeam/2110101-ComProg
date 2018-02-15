@@ -47,3 +47,44 @@ while True :
     x, y = map(ls.index, [x, y])
     ls[x], ls[y] = ls[y], ls[x]
 print(ls)
+
+# 06_P9
+ls = input().strip().split()
+print(*(ls[int(i)] for i in input().strip().split()))
+
+# 06_P10
+ls = [int(x) for x in input().split(', ')] + [0]
+print(sum(1 for x, y in zip(ls, ls[1:]) if x < 0 and y >= 0))
+
+# 06_P11
+ls = list(map(int, input().split()))
+ls = [ls.pop(0 if ls[0] > ls[-1] else -1) for _ in range(len(ls))]
+x, y = sum(ls[::2]), sum(ls[1::2])
+print(x, y, [x == y, x > y, x < y].index(True), sep = '\n')
+
+# 06_P12
+s, n = list(input().strip()), int(input())
+for _ in range(n) :
+    op, *ls = input().strip().split()
+    if op == 'in' :     s.insert(int(ls[1]), ls[0])
+    if op == 'out' :    s.pop(int(ls[0]))
+    if op == 'swap' :   s[int(ls[0])], s[int(ls[1])] = s[int(ls[1])], s[int(ls[0])]
+    print(''.join(s))
+
+# 06_P13
+dc, nw = {i+1 : int(input()) for i in range(int(input()))}, -1
+while nw != 1 :
+    print(abs(nw), end = ' ')
+    nw = dc[abs(nw)]
+
+# 06_P14
+ls = []
+while True :
+    inp = input().strip().split(' ', 1)
+    if inp[0] == 'return' :
+        ls.append(inp[1])
+        print(len(ls))
+    elif inp[0] == 'shelf' :    print('no book' if not ls else ls.pop())
+    elif inp[0] == 'top' :      print('no book' if not ls else ls[-1])
+    elif inp[0] == 'list' :     print(ls)
+    else :      break
