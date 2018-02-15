@@ -27,52 +27,6 @@ print('More than' if 1 > 2 else 'Less than')
 ```
 #### Note that inline if-else must have `else` in the statement. Otherwise the syntax will be wrong.
 
-## Inline for-loop & List comprehension
-Basically for-loop with alternative short implementation, which is usually used with list, set, generator comprehension.
-
-List comprehension is a way to express a list using short syntax, which usually combined with inline for-loop
-
-The syntax of inline for-loop is:
-```python
-_command_ for _variable_ in _iterable_
-```
-which is equivalent to:
-```python
-for _variable_ in _iterable_ :
-	_command_
-```
-
-The list comprehension syntax is:
-```python
-ls = [_expression_ for _var_ in _iterable_]
-```
-which is equivalent to:
-```python
-ls = []
-for _var_ in _iterable_ :
-	ls.append(_expression_)
-```
-Here is an example:
-```python
-ls = [x for x in range(5)]	# [0, 1, 2, 3, 4]
-```
-
-Inline if-else can also be used in for-loop as followed:
-```python
-_something_when_true_ if _condition_ else _something_when_false_ for _variable_ in _iterable_
-# Again, else is needed.
-```
-or
-```python
-_command_ for _variable_ in _iterable_ if _condition_
-```
-
-Here are some examples:
-```python
-ls = [x for x in range(5) if x % 2 == 0]			# [0, 2, 4]
-ls = [x if x % 2 == 0 else -x for x in range(5)]		# [0, -1, 2, -3, 4]
-```
-
 ## Function
 Function is a block of reusable codes, which provides an easier way to implement reputative commands.
 
@@ -107,25 +61,63 @@ which is equivalent to:
 def sum(x, y) :
 	return x + y
 ```
-
-## sorted()
-Return sorted list from the given iterable.
-The syntax is:
+## `map()`, `filter()`, and List Comprehension
+Map is a way to map a list to another list with a functon.
+List Comprehension implementation using map is:
 ```python
-sorted(iterable[, key][, reverse])
+ls = [func(_args_) for _args_ in _iterable_]
 ```
-- iterable - sequence (string, tuple, list) or collection (set, dictionary, frozen set) or any iterator 
-- reverse (Optional) - If true, the sorted list is reversed (or sorted in Descending order)
-- key (Optional) - function that serves as a key for the sort comparison
-Here is the examples:
+- `func()` is a map function.
+- `_args_` is a list of arguments.
+- `_iterable_` is an iterable.
+which is equivalent to:
 ```python
-sorted([3, 2, 4, 1])					# [1, 2, 3, 4]
-sorted(['a', 'B', 'C'])					# ['B', 'C', 'a']
-sorted(['a', 'B', 'C'], key = str.swapcase)		# ['a', 'B', 'C']
-sorted([3, 2, 4, 1], reverse = True)			# [4, 3, 2, 1]
+ls = list(map(func, _iterable_))
+```
+Here is an example:
+```python
+ls = [x**2 for x in [1, 2, 3]]		# ls = [1, 4, 9]
+ls = list(map(lambda x : x**2, [1, 2, 3]))	# ls = [1, 4, 9]
 ```
 
-# TBA
-- `zip()`: zip lists to tuples.
-- `map()`: map a list to another with a function.
+Filter is a way to filter elements in list using a condition.
+List Comprehension implementation using filter is:
+```python
+ls = [_args_ for _args_ in _iterable_ if _condition_]
+```
+- `func()` is a map function.
+- `_args_` is a list of arguments.
+- `_iterable_` is an iterable.
+- `_condition_` is a filter condition.
+which is equivalent to:
+```python
+ls = list(filter(_condition_, _iterable_))
+```
+Here is an example:
+```python
+ls = [x for x in [1, 2, 3] if x % 2 != 0]			# ls = [1, 3]
+ls = list(filter(lambda x : x % 2 != 0, [1, 2, 3]))	# ls = [1, 3]
+```
+
+## `zip()`
+`zip()` is a function that zip two or more lists into a list of tuples.
+The implementation is:
+```python
+zip(_list of lists_)
+```
+Here are some examples:
+```python
+zip([1, 2, 3], [4, 5, 6])		# [(1, 4), (2, 5), (3, 6)]'
+zip(['a', 'b', 'c'], [1, 2, 3], [3, 2, 1])	# [('a', 1, 3), ('b', 2, 2), ('c', 3, 1)]
+```
+Here is an illustration:
+```
+ls1:	[1, 	 2, 	 3]
+ls2:	[4, 	 5, 	 6]
+		 ^  	 ^  	 ^
+		 |  	 |  	 |
+zip:  [(1, 4), (2, 5), (3, 6)]
+```
+
+# TBA ?
 - Iterator & Generator
