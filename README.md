@@ -29,7 +29,7 @@ Here is an example:
 ```python
 print('More than' if 1 > 2 else 'Less than')
 # which is equivalent to
-print(['More than', 'Less than'](1 > 2))
+print(['Less than', 'More than'](1 > 2))
 ```
 #### Note that inline if-else must have `else` in the statement. Otherwise the syntax will be wrong.
 
