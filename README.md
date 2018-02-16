@@ -115,7 +115,7 @@ zip(_list of lists_)
 ```
 Here are some examples:
 ```python
-zip([1, 2, 3], [4, 5, 6])		# [(1, 4), (2, 5), (3, 6)]'
+zip([1, 2, 3], [4, 5, 6])		# [(1, 4), (2, 5), (3, 6)]
 zip(['a', 'b', 'c'], [1, 2, 3], [3, 2, 1])	# [('a', 1, 3), ('b', 2, 2), ('c', 3, 1)]
 ```
 Here is an illustration:
