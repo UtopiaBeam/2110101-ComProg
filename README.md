@@ -21,9 +21,15 @@ if _condition_ :
 else :
 	_something_when_false_
 ```
+and is also equivalent to:
+```python
+[_something_when_false_,  _something_when_true_](_condition_)
+```
 Here is an example:
 ```python
 print('More than' if 1 > 2 else 'Less than')
+# which is equivalent to
+print(['More than', 'Less than'](1 > 2))
 ```
 #### Note that inline if-else must have `else` in the statement. Otherwise the syntax will be wrong.
 
@@ -70,6 +76,7 @@ ls = [func(_args_) for _args_ in _iterable_]
 - `func()` is a map function.
 - `_args_` is a list of arguments.
 - `_iterable_` is an iterable.
+
 which is equivalent to:
 ```python
 ls = list(map(func, _iterable_))
@@ -89,6 +96,7 @@ ls = [_args_ for _args_ in _iterable_ if _condition_]
 - `_args_` is a list of arguments.
 - `_iterable_` is an iterable.
 - `_condition_` is a filter condition.
+
 which is equivalent to:
 ```python
 ls = list(filter(_condition_, _iterable_))
