@@ -83,7 +83,7 @@ ls = list(map(func, _iterable_))
 ```
 Here is an example:
 ```python
-ls = [x**2 for x in [1, 2, 3]]		# ls = [1, 4, 9]
+ls = [x**2 for x in [1, 2, 3]]			# ls = [1, 4, 9]
 ls = list(map(lambda x : x**2, [1, 2, 3]))	# ls = [1, 4, 9]
 ```
 
@@ -103,7 +103,7 @@ ls = list(filter(_condition_, _iterable_))
 ```
 Here is an example:
 ```python
-ls = [x for x in [1, 2, 3] if x % 2 != 0]			# ls = [1, 3]
+ls = [x for x in [1, 2, 3] if x % 2 != 0]		# ls = [1, 3]
 ls = list(filter(lambda x : x % 2 != 0, [1, 2, 3]))	# ls = [1, 3]
 ```
 
@@ -115,7 +115,7 @@ zip(_list of lists_)
 ```
 Here are some examples:
 ```python
-zip([1, 2, 3], [4, 5, 6])		# [(1, 4), (2, 5), (3, 6)]
+zip([1, 2, 3], [4, 5, 6])			# [(1, 4), (2, 5), (3, 6)]
 zip(['a', 'b', 'c'], [1, 2, 3], [3, 2, 1])	# [('a', 1, 3), ('b', 2, 2), ('c', 3, 1)]
 ```
 Here is an illustration:
