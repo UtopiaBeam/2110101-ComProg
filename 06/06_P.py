@@ -22,20 +22,20 @@ print(sum(ls) / len(ls))
 ls = list(map(float, input().split()))[:-1]
 print(sum(ls) / len(ls))
 
-# 06_P5 (Adv : sys.stdin)
-print(*(w*10000/h**2 for w, h in [map(int, s.strip().split()) for s in __import__('sys').stdin if len(s.strip().split()) > 1]), sep = '\n')
-
 # 06_P5
 while True :
     ls = list(map(int, input().strip().split()))
     if ls[0] == -1 :    break
     print(ls[0]*10000 / ls[1]**2)
 
+# 06_P5 (Adv : sys.stdin)
+print(*(w*10000/h**2 for w, h in [map(int, s.strip().split()) for s in __import__('sys').stdin if len(s.strip().split()) > 1]), sep = '\n')
+
 # 06_P6
 ls = list(map(int, input().split()))
 print(*(sum(ls[max(0, i-1) : min(len(ls), i+2)]) // (min(len(ls), i+2)-max(0, i-1)) for i in range(len(ls))))
 
-# 06_P7
+# 06_P7 (Adv: zip())
 a, b = (map(int, input().strip()[1:-1].split(',')) for _ in range(2))
 print(sum([x*y for x, y in zip(a, b)]))
 
@@ -72,10 +72,10 @@ for _ in range(n) :
     print(''.join(s))
 
 # 06_P13
-dc, nw = {i+1 : int(input()) for i in range(int(input()))}, -1
+ls, nw = [0] + [int(input()) for i in range(int(input()))], -1
 while nw != 1 :
     print(abs(nw), end = ' ')
-    nw = dc[abs(nw)]
+    nw = ls[abs(nw)]
 
 # 06_P14
 ls = []
