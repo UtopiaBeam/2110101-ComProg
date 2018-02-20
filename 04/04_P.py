@@ -1,7 +1,6 @@
 # 04_P1
-s = input().strip()
 sum = 0
-for x in s :
+for x in input().strip() :
     if x.isupper() :
         sum += 1
 print(sum)
@@ -50,7 +49,7 @@ s = input().strip()
 print(s + str(sum(map(int, s)) % 2))
 
 # 04_P7
-s = input()
+s = input().strip()
 ans = [x for x in range(10) if str(x) not in s]
 if ans :    print(*ans)
 else :      print('No missing digits')
@@ -61,7 +60,7 @@ if st :     print(*sorted(st))
 else :      print('No missing digits')
 
 # 04_P8
-a = input().lower()
+a = input().strip().lower()
 chk = True
 for i in range(1, len(a)) :
     if ord(a[i-1]) > ord(a[i]) :
@@ -73,7 +72,7 @@ print('yes' if chk else 'no')
 a = list(input().lower())
 print('yes' if a == sorted(a) else 'no')
 
-# 04_P9
+# 04_P9 (1)
 str, a, b = (input().strip() for _ in range(3))
 ans = ''
 for c in str :
@@ -81,6 +80,10 @@ for c in str :
     elif c == b :   ans += a
     else :          ans += c
 print(ans)
+
+# 04_P9 (2)
+str, a, b = (input().strip() for _ in range(3))
+print(str.replace(a, '_').replace(b, a).replace('_', b))
 
 # 04_P9 (Adv: dict)
 str, a, b = (input().strip() for _ in range(3))
@@ -124,7 +127,7 @@ s = input().strip().lower()
 idx = [i for i in range(len(s)) if s[i] in 'aeiou']
 print(sum(1 for i, j in zip(idx, idx[1:]) if i+1 != j) + 1 if idx else 0)
 
-# 04_P14
+# 04_P14 (1)
 s = input().strip() + '+'
 if s[0] not in '+-' :
     s = '+' + s
@@ -137,6 +140,20 @@ for x in s :
         else :          op = -1
     else :
         num = 10*num + int(x)
+print(ans)
+
+# 04_P14 (2)
+s = input().strip() + '+'
+if s[0] not in '+-' :
+    s = '+' + s
+ans, num, op = 0, '', 1
+for x in s :
+    if x in '+-' :
+        ans += op * int(num)
+        num = ''
+        if x == '+' :   op = 1
+        else :          op = -1
+    else :      num += x
 print(ans)
 
 # 04_P14 (Adv: eval())
@@ -205,8 +222,7 @@ print(format(-ans-tmp if neg else ans+tmp, ',d'), end = '')
 if d :  print('.', *[num[x] for x in d.split('-')], sep = '')
 
 # 04_P18
-n = int(input())
-ls = [input().strip() for _ in range(n)]
+ls = [input().strip() for _ in range(int(input()))]
 pre = suf = ls[0]
 for s in ls :
     tmp = ''
@@ -222,12 +238,11 @@ print(pre or 'NO COMMON PREFIX')
 print(suf or 'NO COMMON SUFFIX')
 
 # 04_P18 (Adv: os.path.commonprefix())
-from os.path import commonprefix
-n = int(input())
-ls = [input().strip() for _ in range(n)]
-print(commonprefix(ls) or 'NO COMMON PREFIX')
+from os.path import commonprefix as cp
+ls = [input().strip() for _ in range(int(input()))]
+print(cp(ls) or 'NO COMMON PREFIX')
 ls = [s[::-1] for s in ls]
-print(commonprefix(ls)[::-1] or 'NO COMMON SUFFIX')
+print(cp(ls)[::-1] or 'NO COMMON SUFFIX')
 
 # 04_P19
 a, b = input().strip(), input().strip()
