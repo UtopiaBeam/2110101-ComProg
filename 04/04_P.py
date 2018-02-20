@@ -9,9 +9,8 @@ print(sum)
 print(sum(1 for x in input().strip() if x.isupper()))
 
 # 04_P2
-s = input().strip()
 c, v = 0, 0
-for x in s :
+for x in input().strip() :
     if x.isalpha() :
         if x.lower() in 'aeiou' :
             v += 1
@@ -129,8 +128,6 @@ print(sum(1 for i, j in zip(idx, idx[1:]) if i+1 != j) + 1 if idx else 0)
 
 # 04_P14 (1)
 s = input().strip() + '+'
-if s[0] not in '+-' :
-    s = '+' + s
 ans, num, op = 0, 0, 1
 for x in s :
     if x in '+-' :
@@ -144,8 +141,6 @@ print(ans)
 
 # 04_P14 (2)
 s = input().strip() + '+'
-if s[0] not in '+-' :
-    s = '+' + s
 ans, num, op = 0, '', 1
 for x in s :
     if x in '+-' :
