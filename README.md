@@ -2,9 +2,12 @@
 Sample solutions for CU 2110101 Comp Prog course.
 You may ask [me](https://www.facebook.com/natchapolsrisang) any questions you have or report bugs if any.
 
-Some problems may have alternative ways to implement. The ones which exceed normal courses are labeled as (Adv: _topic(s) that is used_)
+Some problems may have alternative ways to implement. The ones which follow normal courses are labeled by number (if there are multiple ways of implementation), and the ones which exceed normal courses are labeled as (Adv: _topic(s) that is used_)
 
 ### Please do not copy the codes. You should take these as the examples and write your own codes.
+
+# Progressing solutions
+_None_
 
 # Common used topics
 There are some topics that used frequently as following:
