@@ -63,7 +63,7 @@ else :      print('No missing digits')
 a = input().strip().lower()
 chk = True
 for i in range(1, len(a)) :
-    if ord(a[i-1]) > ord(a[i]) :
+    if a[i-1] > a[i] :
         chk = False
         break
 print('yes' if chk else 'no')
@@ -122,7 +122,7 @@ for i in range(len(s)-1) :
         cnt += 1
 print(cnt)
 
-# 04_P13 (Adv: enumerate() + sum() + zip())
+# 04_P13 (Adv: sum() + zip())
 s = input().strip().lower()
 idx = [i for i in range(len(s)) if s[i] in 'aeiou']
 print(sum(1 for i, j in zip(idx, idx[1:]) if i+1 != j) + 1 if idx else 0)
@@ -168,7 +168,7 @@ for c in input().strip() :
     ls.append((c, dc[c]))
 print(*(c for c, x in ls if dc[c] == 1 or x == 2), sep = '')
 
-# 04_P16 (Adv: function)
+# 04_P16 (Adv: list + function)
 num = ['soon', 'nueng', 'song', 'sam', 'see', 'ha', 'hok', 'jed', 'pad', 'kao']
 dig = ['', '', 'sip', 'roey', 'pun', 'muen', 'saen']
 sp = [('nueng-sip', 'sip'), ('sip-nueng', 'sip-ed'), ('song-sip', 'yee-sip')]

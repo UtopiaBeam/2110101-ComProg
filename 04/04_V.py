@@ -22,12 +22,12 @@ ls = str.split()
 print('Found' if wd in ls else 'Not Found')
 
 # 04_V4 (Adv: list)
-str = input()
+str = input().strip()
 num = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-for i in range(int(len(str))) :
-    if str[i] in '0123456789' :
+for i in range(len(str)) :
+    if str[i].isdigit() :
         print(num[int(str[i])], end = '')
-        if i < int(len(str)) - 1 and str[i+1] in '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM' :
+        if i < len(str) - 1 and (str[i+1].isdigit() or str[i+1].isalpha()) :
             print(end = ' ')
     else :
         print(str[i], end = '')
