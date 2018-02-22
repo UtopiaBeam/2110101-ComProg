@@ -12,9 +12,16 @@ for c in str :
 print(ans)
 
 # 04_V3
-st = input().lower()
-wd = input().lower()
-str = ''
+st, wd = input().strip().lower(), input().strip().lower()
+s = ''
+for c in st :
+    if c not in '\'\",.' :
+        s += c
+print('Found' if ' ' + wd + ' ' in ' ' + s + ' ' else 'Not Found')
+
+# 04_V3 (Adv: list)
+st = ''.join([c for c in list(input().strip().lower()) if c not in '\'\",.'])
+wd = input().strip().lower()
 for c in st :
     if c not in '\'\",.' :
         str += c
