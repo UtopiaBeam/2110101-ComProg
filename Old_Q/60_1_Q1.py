@@ -44,6 +44,39 @@ elif op == 'T2M' :
 else :      print('Invalid code')
 
 # 60_1_Q1_4a_p
+res = input().strip()
+tar = int(input())
+i = 0
+total_score = 0
+for f in range(1,11) :
+    if res[i:i+3] == 'XXX' :
+        score_in_frame_f = 30
+        i += 1
+    elif res[i:i+2] == 'XX' :
+        score_in_frame_f = 20 + int(res[i+2])
+        i += 1
+    elif res[i] == 'X' and res[i+2] == '/' :
+        score_in_frame_f = 20
+        i += 1
+    elif res[i] == 'X' :
+        score_in_frame_f = 10 + int(res[i+1]) + int(res[i+2])
+        i += 1
+    elif res[i+1:i+3] == '/X' :
+        score_in_frame_f = 20
+        i += 2
+    elif res[i+1] == '/' :
+        score_in_frame_f = 10 + int(res[i+2])
+        i += 2
+    else :
+        score_in_frame_f = int(res[i]) + int(res[i+1])
+        i += 2
+    total_score += score_in_frame_f
+    if f == tar :
+        print(score_in_frame_f)
+        break
+else :      print(total_score)
+
+# 60_1_Q1_4a_p (Adv: list)
 ls, n = ['10' if c == 'X' else c for c in input().strip()], int(input())
 fr, sc, nw = [], [0]*12, 0
 for i in range(9) :
