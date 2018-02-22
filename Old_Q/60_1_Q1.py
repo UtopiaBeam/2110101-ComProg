@@ -51,7 +51,7 @@ for i in range(9) :
     fr.extend([i+1] * t)
     nw += t
 fr.extend([10] * (len(ls)-nw))
-ls = [10-int(ls[i-1]) if i > 0 and ls[i] == '/' else int(ls[i]) for i, _ in enumerate(ls)] + [0, 0]
+ls = [10-int(ls[i-1]) if c == '/' else int(c) for i, c in enumerate(ls)] + [0, 0]
 for i in range(len(ls) - 2) :
     sc[fr[i]] += ls[i]
     if fr[i] == 10 :        continue
