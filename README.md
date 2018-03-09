@@ -7,7 +7,8 @@ Some problems may have alternative ways to implement. The ones which follow norm
 ### Please do not copy the codes. You should take these as the examples and write your own codes.
 
 # Progressing solutions
-_None (All solutions are completed)_
+- Unit 07 : List 2
+- Unit 08 : Tuple, Set, Dict
 
 # Common used topics
 There are some topics that used frequently as following:
