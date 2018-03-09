@@ -1,7 +1,7 @@
 # 07_V1
 print('dadbe'[int(input())-1])
 
-# 07_V2
+# 07_V2 (Bubble Sort)
 x, op = [int(x) for x in input().split()], input().strip()
 for i in range(len(x)-1) :
     for j in range(len(x)-1) :
