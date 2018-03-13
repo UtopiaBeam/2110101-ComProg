@@ -38,3 +38,22 @@ print(sum(dc[x]*dc[n-x] if x != n-x else dc[x]*(dc[x]-1) for x in ls) // 2)
 # 08_P4 & P5 (2: Adv: Counter)
 dc, n = __import__('collections').Counter(list(map(int, input().split()))), int(input())
 print(sum(dc[x]*dc[n-x] if x != n-x else dc[x]*(dc[x]-1) for x in dc) // 2)
+
+# 08_P6 (TBA)
+
+# 08_P7 (Adv: defaultdict + lambda)
+ls = [input().strip().split()[-1] for _ in range(int(input()))]
+dc = __import__('collections').defaultdict(list)
+for s in ls :
+    dc[s[:2]].append(s)
+ans = min(dc.keys(), key = lambda x : (-len(dc[x]), x))
+print(ans, len(dc[ans]), *dc[ans], sep = '\n')
+
+# 08_P8
+a, b = (input().strip().split() for _ in range(2))
+dc = dict([*zip(a, b), *zip(b, a)])
+print(*[dc.get(x, x) for x in input().strip().split()])
+
+# 08_P9 (Adv: defaultdict)
+dc = __import__('collections').Counter([int(input()) for _ in range(int(input()))])
+print(max(dc.keys(), key = lambda x : (dc[x], -x)))
