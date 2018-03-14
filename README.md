@@ -7,7 +7,9 @@ Some problems may have alternative ways to implement. The ones which follow norm
 ### Please do not copy the codes. You should take these as the examples and write your own codes.
 
 # Progressing solution(s)
-- Unit 08 : Tuple, Set, Dict
+- 08_P
+- 09-12
+- 60_2_Q1
 
 # Common used topics
 There are some topics that used frequently as following:
@@ -129,6 +131,3 @@ ls2:	[4, 	 5, 	 6]
 	 |  	 |  	 |
 zip:  [(1, 4), (2, 5), (3, 6)]
 ```
-
-# TBA ?
-- Iterator & Generator
