@@ -39,7 +39,23 @@ print(sum(dc[x]*dc[n-x] if x != n-x else dc[x]*(dc[x]-1) for x in ls) // 2)
 dc, n = __import__('collections').Counter(list(map(int, input().split()))), int(input())
 print(sum(dc[x]*dc[n-x] if x != n-x else dc[x]*(dc[x]-1) for x in dc) // 2)
 
-# 08_P6 (TBA)
+# 08_P6 (Issue: TLE)
+_ = input()
+ls, qs = (list(map(int, input().split())) for _ in range(2))
+for q in qs :
+    flag = False
+    for i in range(len(ls)-2) :
+        l, r = i+1, len(ls)-1
+        while l < r :
+            if ls[i] + ls[l] + ls[r] == q :
+                flag = True
+                # print(ls[i], ls[l], ls[r])
+                break
+            if ls[i] + ls[l] + ls[r] < q :
+                l += 1
+            else :      r -= 1
+        if flag :       break
+    print('YES' if flag else 'NO')
 
 # 08_P7 (Adv: defaultdict + lambda)
 ls = [input().strip().split()[-1] for _ in range(int(input()))]
