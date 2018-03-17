@@ -74,3 +74,64 @@ print(*[dc.get(x, x) for x in input().strip().split()])
 # 08_P9 (Adv: defaultdict)
 dc = __import__('collections').Counter([int(input()) for _ in range(int(input()))])
 print(max(dc.keys(), key = lambda x : (dc[x], -x)))
+
+# 08_P10 (Issue: WA)
+ls = [input().strip().split() for _ in range(int(input()))]
+qr = input().strip().split()
+ls = [l for l in ls if all(x in l for x in qr)]
+print(*[' '.join(l) for l in sorted(ls)] or ['Not Found'], sep = '\n')
+
+# 08_P11 (Adv: defaultdict + lambda)
+ls = [set(input().strip().split()) for _ in range(int(input()))]
+wd = input().strip()
+ls = [l for l in ls if wd in l]
+if not ls :     print('Not Found')
+else :
+    dc = __import__('collections').defaultdict(int)
+    for l in ls :
+        for ac in l :
+            if ac != wd :   dc[ac] += 1
+    if not dc :     print('No suggested event')
+    else :
+        ans = min(dc, key = lambda x : (-dc[x], x))
+        print(ans, dc[ans], sep = '\n')
+
+# 08_P12 (Adv: defaultdict + lambda)
+ls = [set(input().strip().split()) for _ in range(int(input()))]
+wd = input().strip()
+ls = [l for l in ls if wd in l]
+if not ls :     print('Not Found')
+else :
+    dc = __import__('collections').defaultdict(int)
+    for l in ls :
+        for ac in l :
+            if ac != wd :   dc[ac] += 1
+    if not dc :     print('No suggested event')
+    else :
+        for tp in sorted(zip(dc.keys(), dc.values()), key = lambda tp : (-tp[1], tp[0])) :
+            print(*tp)
+
+# 08_P13 (Adv: defaultdict)
+ls = [ln.strip().split() for ln in __import__('sys').stdin]
+ls, wd = ls[:-1], *ls[-1]
+dc = __import__('collections').defaultdict(list)
+for tp in ls :
+    dc[tp[0]].append(tp[1])
+    dc[tp[1]].append(tp[0])
+ans = {wd} | set(dc[wd]) | set(val for key in dc[wd] for val in dc[key])
+print(*sorted(ans), sep = '\n')
+
+# 08_P14
+dc = dict(input().strip().split() for _ in range(int(input())))
+ls = sorted([input().strip().split() for _ in range(int(input()))], key = lambda l : -float(l[1]))
+ans = []
+for l in ls :
+    for dp in l[2:] :
+        if dp not in dc :   continue
+        if type(dc[dp]) != 'int' :
+            dc[dp] = int(dc[dp])
+        if dc[dp] > 0 :
+            ans.append((l[0], dp))
+            dc[dp] -= 1
+            break
+print(*[' '.join(tp) for tp in sorted(ans)], sep = '\n')
