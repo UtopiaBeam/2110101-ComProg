@@ -75,10 +75,10 @@ print(*[dc.get(x, x) for x in input().strip().split()])
 dc = __import__('collections').Counter([int(input()) for _ in range(int(input()))])
 print(max(dc.keys(), key = lambda x : (dc[x], -x)))
 
-# 08_P10 (Issue: WA)
+# 08_P10
 ls = [input().strip().split() for _ in range(int(input()))]
 qr = input().strip().split()
-ls = [l for l in ls if all(x in l for x in qr)]
+ls = [l for l in ls if all(x in l[1:] for x in qr)]
 print(*[' '.join(l) for l in sorted(ls)] or ['Not Found'], sep = '\n')
 
 # 08_P11 (Adv: defaultdict + lambda)
@@ -135,3 +135,19 @@ for l in ls :
             dc[dp] -= 1
             break
 print(*[' '.join(tp) for tp in sorted(ans)], sep = '\n')
+
+# 08_P15
+cr, nm = (dict(tuple(ln.strip().split(',')) for ln in open(input().strip())) for _ in range(2))
+for ln in open(input().strip()) :
+    x, y = ln.strip().split(',')
+    print('record error' if x not in cr or y not in nm else cr[x] + ',' + nm[y])
+
+# 08_P16
+ls = [set(input().strip().split()) for _ in range(int(input()))]
+print(len(set.union(*ls or [set()])), len(set.intersection(*ls or [set()])), sep = '\n')
+
+# 08_P17
+dc, ls = dict(), [input().strip().split() for _ in range(int(input()))]
+for _, l in ls :
+    dc[l] = False
+print(sorted(set(w for w, _ in ls if w not in dc or dc[w])), sep = '\n')
