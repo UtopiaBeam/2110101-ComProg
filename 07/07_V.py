@@ -52,4 +52,3 @@ for ln in open('circulations.txt') :
         ls.append(ln.strip().split())
 if not ls :     print('Not Found')
 else :      print(*[' '.join(ln) for ln in sorted(ls, key = lambda x : int(x[-1]))], sep = '\n')
-       
