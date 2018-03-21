@@ -1,3 +1,16 @@
+# 08_P1
+ids, cts, odr = dict(), dict(), dict()
+for i in range(int(input())) :
+    x, ls = input().strip().replace(' ', '').split(':')
+    if x not in ids :   ids[x] = []
+    ids[x].extend(ls.split(','))
+    odr[x] = i
+    for c in ls.split(',') :
+        if c not in cts :   cts[c] = []
+        cts[c].append(x)
+s = input().strip()
+print(*sorted({x for c in ids[s] for x in cts[c] if x != s}, key = lambda x : odr[x]) or ['Not Found'], sep = '\n')
+
 # 08_P1 (Adv: defaultdict)
 from collections import defaultdict as dict
 ids, cts, odr = dict(list), dict(list), dict(int)
@@ -10,6 +23,16 @@ for i in range(int(input())) :
 s = input().strip()
 print(*sorted({x for c in ids[s] for x in cts[c] if x != s}, key = lambda x : odr[x]) or ['Not Found'], sep = '\n')
 
+# 08_P2
+dc = dict()
+for _ in range(int(input())) :
+    nm, *ls = input().strip().split(', ')
+    for x in ls :
+        if x not in dc :    dc[x] = []
+        dc[x].append(nm)
+ls = input().strip().split(', ')
+for x in ls :   print(x, '->', ', '.join(['Not found'] if x not in dc else dc[x]))
+
 # 08_P2 (Adv: defaultdict)
 from collections import defaultdict as dict
 dc = dict(list)
@@ -18,6 +41,13 @@ for _ in range(int(input())) :
     for x in ls :       dc[x].append(nm)
 ls = input().strip().split(', ')
 for x in ls :   print(x, '->', ', '.join(dc[x]) or 'Not found')
+
+# 08_P3
+dc, ls = dict(), list(map(int, input().strip().split()))
+for x in ls :
+    if x not in dc :    dc[x] = 0
+    dc[x] += 1
+print(min([x for x in ls if dc[x] == 1] or ['NONE']))
 
 # 08_P3 (Adv: defaultdict)
 dc, ls = __import__('collections').defaultdict(int), list(map(int, input().strip().split()))
