@@ -131,3 +131,81 @@ print( sorted( search(docs, tokens[0], tokens[1:]) ) )
 def f(x) :      return x**2 + 2*x + 3
 def f_inv(x) :  return int((x-2)**0.5) - 1 
 print(eval(input().strip()))
+
+# 09_P8 (zip())
+def isSet(c1, c2, c3):
+    return all(len(set([x, y, z])) in [1, 3] for x, y, z in zip(c1, c2, c3))
+cards = []
+for i in range(12):
+    cards.append(input().strip().split())
+for i in range(12):
+    for j in range(i+1, 12):
+        for k in range(j+1, 12):
+            if isSet(cards[i], cards[j], cards[k]):
+                print(i, j, k)
+
+# 09_P9
+def isSevenUp(x):
+    return x % 7 == 0 or '7' in str(x)
+def nextSevenUp(x):
+    while not isSevenUp(x+1) :
+        x += 1
+    return x+1
+def prevSevenUp(x):
+    while not isSevenUp(x-1) :
+        x -= 1
+    return x-1
+
+f, x = input().strip().split()
+x = int(x)
+if f == 'isSevenUp': print(isSevenUp(x))
+elif f == 'nextSevenUp': print(nextSevenUp(x))
+elif f == 'prevSevenUp': print(prevSevenUp(x))
+
+# 09_P10 (zip())
+def distance(p, q):
+    return ( (p[0]-q[0])**2 + (p[1]-q[1])**2 )**0.5
+def perimeter(points):
+    return sum(distance(x, y) for x, y in zip(points, points[1:] + points[0:1]))
+s = input().strip().split()
+p = [(float(t[1:t.find(',')]), float(t[t.find(',')+1:-1])) for t in s]
+print(perimeter(p))
+
+# 09_P11
+def zscore(L):
+    mean = sum(L) / len(L)
+    sd = (1/len(L) * sum( (x-mean)**2 for x in L))**0.5
+    return [(x-mean)/sd for x in L]
+L = [float(e) for e in input().split()]
+for i in zscore(L):
+    print(i)
+
+# 09_P12
+def eat(q1, q2):
+    return any(q1[i] == q2[i] for i in range(2)) or abs(q1[0]-q2[0]) == abs(q1[1]-q2[1])
+def all_eat(L):
+    ls = []
+    for i in range(len(L)) :
+        for j in range(i+1, len(L)) :
+            if eat(L[i], L[j]) :
+                ls.append( (i, j) )
+    return ls
+print(eval(input().strip()))
+
+# 09_P13
+def row_number(t, e) :
+    return [r for r in range(len(t)) if e in t[r]][0]
+def flatten(t) :
+    return [x for ts in t for x in ts if x != 0]
+def inversions(t) :
+    cnt = 0
+    for i in range(len(t)) :
+        for j in range(i+1, len(t)) :
+            cnt += (t[i] > t[j])
+    return cnt
+def solvable(t) :
+    inv = inversions(flatten(t))
+    if len(t) % 2 :     return inv % 2 == 0
+    return (inv + row_number(t, 0)) % 2 == 1
+
+exec(input().strip())
