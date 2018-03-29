@@ -1,8 +1,12 @@
-# 07_P1
+# 07_P1 (1)
 cnt = [0]*10
 for x in input().strip() :
     cnt[int(x)] += 1
 print(*cnt, sep = '\n')
+
+# 07_P1 (2)
+ls = list(input().strip())
+print(*[ls.count(str(c)) for c in range(10)], sep = '\n')
 
 # 07_P2
 cnt = [0]*62
