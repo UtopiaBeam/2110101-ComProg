@@ -118,7 +118,25 @@ for _ in range(n) :
     dc.setdefault(x, []).append(y)
 print(['no', 'yes'][dfs(s, e)])
 
-# 10_P15 (Backtracking)
+# 10_P15
+ans = []
+def dfs(nw, e, path) :
+    path += '{} -> '.format(nw)
+    if nw == e :
+        ans.append(path.strip(' -> '))
+    else : 
+        for nx in sorted(dc.get(nw, set())) :
+            dfs(nx, e, path)
+
+n, s, e = map(int, input().split())
+dc = dict()
+for _ in range(n) :
+    x, y = map(int, input().split())
+    dc.setdefault(x, set()).add(y)
+dfs(s, e, '')
+print(*ans or ['no'], sep = '\n')
+
+# 10_P15 (Backtracking + default parameter)
 ans = []
 def dfs(nw, e, ls=[]) :
     ls.append(nw)
