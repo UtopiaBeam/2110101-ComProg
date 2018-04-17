@@ -93,6 +93,17 @@ def doublelist(ls) :
     return [x if type(x) != list else doublelist(x) for x in ls for _ in range(2)]
 print(doublelist(eval(input().strip())))
 
+# 10_P13
+ans = set()
+def gen(s, i=0, wd='') :
+    if i == len(s) :
+        ans.add(wd)
+        return
+    if s[i].isupper() :     gen(s, i+1, wd)
+    gen(s, i+1, wd+s[i])
+gen(input().strip())
+print(*sorted(ans), sep = '\n')
+
 # 10_P13 (Backtracking)
 ans = set()
 def gen(s, i=0, wd=[]) :
