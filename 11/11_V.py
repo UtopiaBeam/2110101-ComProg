@@ -26,7 +26,7 @@ def cal_bmi(hw):
 def main():
     hw = read_height_weight()
     bmi = cal_bmi(hw)
-    avg_bmi = sum(bmi) / bmi.size
+    avg_bmi = bmi.mean()
     count_underweight = (bmi < 18.5).sum()
     print('average bmi =', avg_bmi)
     print('#bmi < 18.5 =', count_underweight)
