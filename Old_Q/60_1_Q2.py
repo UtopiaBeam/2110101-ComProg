@@ -1,4 +1,31 @@
-
+# 60_1_Q2_00_p
+def list2dict(x):
+    d = dict()
+    for a, (b, c) in x:
+        d.setdefault(c, []).append( (a, b) )
+    return d
+def dict2list(d):
+    x = [[fr, (se, key)] for key, ls in d.items() for fr, se in ls]
+    return x
+def get_empty(d):
+    ans = {x for x in d if not d[x]}
+    return ans
+def compress_string(s) :
+    if not s:       return ()
+    nw, cnt = '', 0
+    ls = []
+    for c in s:
+        if c != nw:
+            ls.append( (nw, cnt) )
+            cnt = 0
+        nw, cnt = c, cnt+1
+    return tuple(ls[1:] + [ (nw, cnt) ])
+def a(n) :
+    if n <= 1:      return [3, 1][n]
+    x, y = a(n-1), a(n-2)
+    return [2*x+y+3, 3*x-2*y-n][n%2]
+exec(input().strip())
+exec(input().strip())
 
 # 60_1_Q2_0a_p
 def add(d1, d2):
