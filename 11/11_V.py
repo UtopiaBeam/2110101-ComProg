@@ -11,7 +11,7 @@ mx = max(range(5), key = lambda x: sum(mat[:,x]))
 print(['Mon', 'Tue', 'Wed', 'Thu', 'Fri'][mx], sum(mat[:,mx]))
 print(*np.dot(arr, mat))
 
-# 11_V3 (Incompleted)
+# 11_V3
 import numpy as np
 def read_height_weight():
     list_hw = []
@@ -22,12 +22,30 @@ def read_height_weight():
 def cm_to_m(x):
     return x/100
 def cal_bmi(hw):
-    return hw[:,1] / cm_to_m(hw[:,0])
+    return hw[:,1] / cm_to_m(hw[:,0])**2
 def main():
     hw = read_height_weight()
     bmi = cal_bmi(hw)
-    avg_bmi = __________________________________
-    count_underweight = ________________________
+    avg_bmi = sum(bmi) / bmi.size
+    count_underweight = (bmi < 18.5).sum()
     print('average bmi =', avg_bmi)
     print('#bmi < 18.5 =', count_underweight)
+exec(input().strip())
+
+# 11_V4
+import numpy as np
+def read_square_matrix():
+    d = [int(e) for e in input().split()]
+    m = [d]
+    for k in range(len(d)-1):
+        m.append([int(e) for e in input().split()])
+    return np.array(m)
+def min_in_each_row(m):
+    return np.amin(m, axis=1)
+def max_in_each_column(m):
+    return np.amax(m, axis=0)
+def diff_of_sums_of_two_diags(m):
+    return abs(np.diag(m).sum() - np.diag(m[::-1, :]).sum())
+def halve(m):
+    return m[::2, ::2] + m[1::2, ::2] + m[::2, 1::2] + m[1::2, 1::2]
 exec(input().strip())
