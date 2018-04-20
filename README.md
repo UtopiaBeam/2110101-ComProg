@@ -2,13 +2,13 @@
 Sample solutions for CU 2110101 Comp Prog course.
 You may ask [me](https://www.facebook.com/natchapolsrisang) any questions you have or report bugs if any.
 
-Some problems may have alternative ways to implement. The ones which follow normal courses are labeled by number (if there are multiple ways of implementation), and the ones which exceed normal courses are labeled as (Adv: _topic(s) that is used_)
+Some problems may have alternative ways to implement. The ones which exceed normal courses are labeled as (Adv: _topic(s) that is used_)
 
 ### Please do not copy the codes. You should take these as the examples and write your own codes.
 
 # Progressing solution(s)
-- Unit 11-12
-- 60_2_Q1
+- Unit 11: NumPy
+- Unit 12: Class
 
 # Common used topics
 There are some topics that used frequently as following:
@@ -16,26 +16,26 @@ There are some topics that used frequently as following:
 ## Inline if-else
 Basically if-else with alternative short implementation, as followed:
 ```python
-_something_when_true_ if _condition_ else _something_when_false_
+_expression_when_true_ if _condition_ else _expression_when_false_
 ```
 which is equivalent to:
 ```python
 if _condition_ :
-	_something_when_true_ 
+	_expression_when_true_ 
 else :
-	_something_when_false_
+	_expression_when_false_
 ```
 and is also equivalent to:
 ```python
-[_something_when_false_,  _something_when_true_](_condition_)
+[_expression_when_false_,  _expression_when_true_][_condition_]
 ```
 Here is an example:
 ```python
 print('More than' if 1 > 2 else 'Less than')
 # which is equivalent to
-print(['Less than', 'More than'](1 > 2))
+print( ['Less than', 'More than'][1 > 2] )
 ```
-#### Note that inline if-else must have `else` in the statement. Otherwise the syntax will be wrong.
+#### Note that inline if-else must have `else` in the statement.
 
 ## Function
 Function is a block of reusable codes, which provides an easier way to implement reputative commands.
@@ -57,7 +57,7 @@ double(5)	# 10
 ```
 
 ## Lambda Function
-Lambda Function is an anonymous function, which is usually needed when it has been created. It is usually used with other functions i.e. `map()`, `filter()`
+Lambda Function is an anonymous function, which is usually needed when it has been created. It is usually used with other functions i.e. `sort()`, `sorted()`, `map()`, `filter()`
 The implementation is:
 ```python
 lambda [parameters] : expression
@@ -115,12 +115,12 @@ ls = list(filter(lambda x : x % 2 != 0, [1, 2, 3]))	# ls = [1, 3]
 `zip()` is a function that zip two or more lists into a list of tuples.
 The implementation is:
 ```python
-zip(_list of lists_)
+ls = list(zip(_list of lists_))
 ```
 Here are some examples:
 ```python
-zip([1, 2, 3], [4, 5, 6])			# [(1, 4), (2, 5), (3, 6)]
-zip(['a', 'b', 'c'], [1, 2, 3], [3, 2, 1])	# [('a', 1, 3), ('b', 2, 2), ('c', 3, 1)]
+list(zip([1, 2, 3], [4, 5, 6]))			    	# [(1, 4), (2, 5), (3, 6)]
+list(zip(['a', 'b', 'c'], [1, 2, 3], [3, 2, 1]))	# [('a', 1, 3), ('b', 2, 2), ('c', 3, 1)]
 ```
 Here is an illustration:
 ```
