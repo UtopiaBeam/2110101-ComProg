@@ -7,7 +7,6 @@ Some problems may have alternative ways to implement. The ones which exceed norm
 ### Please do not copy the codes. You should take these as the examples and write your own codes.
 
 # Progressing solution(s)
-- Unit 11: NumPy
 - Unit 12: Class
 
 # Common used topics
