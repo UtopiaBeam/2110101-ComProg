@@ -179,3 +179,102 @@ for i in range(n):
 rects.sort()
 for i in range(n):
     print(rects[i])
+
+# 12_P7
+class piggybank:
+    def __init__(self):
+        self.coin = {1:0, 2:0, 5:0, 10:0}
+    def add1(self, n):
+        self.coin[1] += n
+    def add2(self, n):
+        self.coin[2] += n
+    def add5(self, n):
+        self.coin[5] += n
+    def add10(self, n):
+        self.coin[10] += n
+    def __int__(self):
+        return sum(k*v for k, v in self.coin.items())
+    def __lt__(self, rhs):
+        return int(self) < int(rhs)
+    def __str__(self):
+        return '{' + ', '.join('{}:{}'.format(k, v) for k, v in sorted(self.coin.items())) + '}'
+cmd1 = input().split(';')
+cmd2 = input().split(';')
+p1 = piggybank(); p2 = piggybank()
+for c in cmd1: eval(c)
+for c in cmd2: eval(c)
+
+# 12_P8 (Same as 12_L4)
+from math import fsum
+class piggybank:
+    def __init__(self):
+        self.coins = {}
+    def add(self, v, n):
+        if sum(self.coins.values()) + n > 100:
+            return False
+        v = float(v)
+        self.coins[v] = self.coins.get(v, 0) + n
+        return True
+    def __float__(self):
+        return fsum(k*v for k, v in self.coins.items())
+    def __str__(self):
+        return '{' + ', '.join('{}:{}'.format(k, v) for k, v in sorted(self.coins.items())) + '}'
+cmd1 = input().split(';')
+cmd2 = input().split(';')
+p1 = piggybank(); p2 = piggybank()
+for c in cmd1:      eval(c)
+for c in cmd2:      eval(c)
+
+# 12_P9
+class rational:
+    def __init__(self, n, d):
+        self.n = n
+        self.d = d
+    def __str__(self):
+        return str(self.n) + "/" + str(self.d)
+    def __lt__(self, rhs):
+        return float(self) < float(rhs)
+    def __float__(self):
+        return self.n / self.d
+    def __add__(self, rhs):
+        return rational( self.n*rhs.d + self.d*rhs.n, self.d*rhs.d )
+    def __sub__(self, rhs):
+        return rational( self.n*rhs.d - self.d*rhs.n, self.d*rhs.d )
+    def __mul__(self, rhs):
+        return rational( self.n*rhs.n, self.d*rhs.d )
+    def __truediv__(self, rhs):
+        return rational( self.n*rhs.d, self.d*rhs.n )
+t, n1, d1, n2, d2 = input().split()
+r1 = rational(int(n1),int(d1)); r2 = rational(int(n2),int(d2))
+if t == '+' :   print(float(r1 + r2))
+elif t == '-' : print(float(r1 - r2))
+else :          print(float(r1 / r2))
+
+# 12_P10
+def gcd(x, y):
+    return x if y == 0 else gcd(y, x%y)
+class rational:
+    def __init__(self, n, d):
+        self.n = n
+        self.d = d
+    def __str__(self):
+        GCD = gcd(self.n, self.d)
+        return str(self.n//GCD) + "/" + str(self.d//GCD)
+    def __lt__(self, rhs):
+        return float(self) < float(rhs)
+    def __float__(self):
+        return self.n / self.d
+    def __add__(self, rhs):
+        return rational( self.n*rhs.d + self.d*rhs.n, self.d*rhs.d )
+    def __sub__(self, rhs):
+        return rational( self.n*rhs.d - self.d*rhs.n, self.d*rhs.d )
+    def __mul__(self, rhs):
+        return rational( self.n*rhs.n, self.d*rhs.d )
+    def __truediv__(self, rhs):
+        return rational( self.n*rhs.d, self.d*rhs.n )
+t, n1, d1, n2, d2 = input().split()
+r1 = rational(int(n1),int(d1)); r2 = rational(int(n2),int(d2))
+if t == '+' : print(str(r1 + r2))
+elif t == '-' : print(str(r1 - r2))
+elif t == '/' : print(str(r1 / r2))
+else : print(str(r1 * r2))
