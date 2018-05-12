@@ -278,3 +278,36 @@ if t == '+' : print(str(r1 + r2))
 elif t == '-' : print(str(r1 - r2))
 elif t == '/' : print(str(r1 / r2))
 else : print(str(r1 * r2))
+
+# 12_P11 (Using static attributes; rms & val)
+class roman :
+    rms = 'I IV V IX X XL L XC C CD D CM M'.split()[::-1]
+    val = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000][::-1]
+    def __init__(self, r):
+        self.r = r
+    def __lt__(self, rhs):
+        return int(self) < int(rhs)
+    def __str__(self):
+        return self.r
+    def __int__(self):
+        n, r = 0, self.r
+        for rm, v in zip(roman.rms, roman.val):
+            while r and rm == r[:len(rm)]:
+                n += v
+                r = r[len(rm):]
+        return n
+    def __add__(self, rhs):
+        n = int(self) + int(rhs)
+        res = ''
+        for rm, v in zip(roman.rms, roman.val):
+            while n >= v:
+                res += rm
+                n -= v
+        return roman(res)
+t, r1, r2 = input().split()
+a = roman(r1); b = roman(r2)
+if t == '1' : print(a < b)
+elif t == '2' : print(int(a),int(b))
+elif t == '3' : print(str(a),str(b))
+elif t == '4' : print(int(a + b))
+else : print(str(a + b))
