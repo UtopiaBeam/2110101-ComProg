@@ -21,12 +21,11 @@ print(*arr.dot(mat), sep='\n')
 
 # 11_P3
 import numpy as np
-n, ls = int(input()), []
+n = int(input())
 for _ in range(3):
     __ = input()
 for _ in range(n-3):
-    ls.append( input().strip().split(',')[1:] )
-print(*np.sum(np.array(ls, dtype=float), axis=1), sep='\n')
+    print(np.sum(np.array(input().strip().split(',')[1:], dtype=float)))
 
 # 11_P3 (not using numpy)
 for _ in range(int(input())):
