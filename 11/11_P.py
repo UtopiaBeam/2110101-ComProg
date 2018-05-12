@@ -19,6 +19,15 @@ arr = np.array([float(input().strip().split()[-1]) for _ in range(n)])
 mat = np.array([list(map(float, input().strip().split()[1:])) for _ in range(n)])
 print(*arr.dot(mat), sep='\n')
 
+# 11_P3
+import numpy as np
+n, ls = int(input()), []
+for _ in range(3):
+    __ = input()
+for _ in range(n-3):
+    ls.append( input().strip().split(',')[1:] )
+print(*np.sum(np.array(ls, dtype=float), axis=1), sep='\n')
+
 # 11_P3 (not using numpy)
 for _ in range(int(input())):
     ln = input().strip().split(',')
