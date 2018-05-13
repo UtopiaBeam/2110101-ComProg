@@ -41,9 +41,9 @@ def read_square_matrix():
         m.append([int(e) for e in input().split()])
     return np.array(m)
 def min_in_each_row(m):
-    return np.amin(m, axis=1)
+    return np.min(m, axis=1)
 def max_in_each_column(m):
-    return np.amax(m, axis=0)
+    return np.max(m, axis=0)
 def diff_of_sums_of_two_diags(m):
     return abs(np.diag(m).sum() - np.diag(m[::-1, :]).sum())
 def halve(m):
