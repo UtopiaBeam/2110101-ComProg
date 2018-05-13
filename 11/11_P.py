@@ -79,5 +79,5 @@ arr = np.mat([input().strip().split() for _ in range(n)], dtype=int)
 res = np.zeros_like(arr, dtype=int)
 for i in range(1, n):
     res += arr**i
-for row in np.sign(np.array(res)):
+for row in np.sign(res):
     print(*row)
