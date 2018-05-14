@@ -3,11 +3,9 @@ print('dbdad'[int(input())-1])
 
 # 11_V2
 import numpy as np
-arr = np.array(list(map(int, input().split())))
-mat = np.array([
-    [float(x) for x in input().split()] for _ in range(4)
-])
-mx = max(range(5), key = lambda x: sum(mat[:,x]))
+arr = np.array(input().split(), dtype=float)
+mat = np.array([ [float(x) for x in input().split()] for _ in range(4)])
+mx = np.argmax(mat.sum(axis=0))
 print(['Mon', 'Tue', 'Wed', 'Thu', 'Fri'][mx], sum(mat[:,mx]))
 print(*np.dot(arr, mat))
 
